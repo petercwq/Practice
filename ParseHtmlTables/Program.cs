@@ -94,6 +94,7 @@ namespace ParseHtmlTables
         {
             List<string> rets = new List<string>();
             var tbody = FindLast(html, "table").Replace("\r", "").Replace("\n", "").Replace("\t", "").Replace("<P>", "").Replace("<p>", "").Replace(@"&nbsp;", "");
+            tbody = Regex.Replace(tbody, @"<a\s+(?:[^>]*?\s+)?href=""([^""]*)""", "");
             int indexTr1 = 0, indexTr2 = -4;
             while (true)
             {
