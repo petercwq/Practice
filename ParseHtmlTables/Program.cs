@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace ParseHtmlTables
@@ -12,8 +12,9 @@ namespace ParseHtmlTables
     {
         const string IdUrlFormat = @"http://aps.unmc.edu/AP/database/antiB.php?page={0}";
         const string TableUrlFormat = @"http://aps.unmc.edu/AP/database/query_output.php?ID={0:D5}";
-
-        const int MaxIdPageId = 133;
+        static readonly Regex IdRegex = new Regex(@"query_output\.php\?ID=\d{5}", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Multiline);
+        static readonly int SubLen = "query_output.php?ID=".Length;
+        const int MaxIdPageId = 134;
 
         static Uri GetIdUri(int id)
         {
@@ -27,16 +28,18 @@ namespace ParseHtmlTables
 
         static void Main(string[] args)
         {
-            Task[] tasks = new Task[MaxIdPageId];
-            for (int i = 0; i <= MaxIdPageId; i++)
-            {
-                tasks[i] = StartWithIdPageAsync(i);
-            }
-            Task.Factory.ContinueWhenAll(tasks,
-              ts =>
-              {
-                  Console.WriteLine("Completed: {0}", ts.Count(t => (t.Status == TaskStatus.RanToCompletion)));
-              });
+            //Task[] tasks = new Task[MaxIdPageId];
+            //for (int i = 0; i < MaxIdPageId; i++)
+            //{
+            //    tasks[i] = StartWithIdPageAsync(i);
+            //}
+            //Task.Factory.ContinueWhenAll(tasks,
+            //  ts =>
+            //  {
+            //      Console.WriteLine("Completed: {0}", ts.Count(t => (t.Status == TaskStatus.RanToCompletion)));
+            //  });
+
+            StartWithTablePageAsync(1, 0).Wait();
 
             Console.ReadKey();
         }
@@ -66,12 +69,57 @@ namespace ParseHtmlTables
 
         static int[] ParseIds(string html)
         {
-            throw new NotImplementedException();
+            Match match = IdRegex.Match(html);
+            List<int> ids = new List<int>();
+            while (match.Success)
+            {
+                ids.Add(int.Parse(match.Value.Substring(SubLen)));
+                match = match.NextMatch();
+            }
+            return ids.ToArray();
+        }
+
+        static string FindLast(string text, string tag)
+        {
+            int eindex = text.LastIndexOf(tag);
+            var ret = text.Remove(eindex);
+            eindex = ret.LastIndexOf(tag);
+            ret = ret.Substring(eindex + tag.Length);
+            var bsindex = ret.IndexOf('>');
+            var esindex = ret.LastIndexOf('<');
+            return ret.Substring(bsindex + 1, esindex - bsindex - 1);
         }
 
         static string[] ParseTable(string html)
         {
-            throw new NotImplementedException();
+            List<string> rets = new List<string>();
+            var tbody = FindLast(html, "table").Replace("\r", "").Replace("\n", "").Replace("\t", "").Replace("<P>", "").Replace("<p>", "").Replace(@"&nbsp;", "");
+            int indexTr1 = 0, indexTr2 = -4;
+            while (true)
+            {
+                indexTr1 = tbody.IndexOf("<tr", indexTr2 + 4);
+                if (indexTr1 == -1)
+                    break;
+                indexTr2 = tbody.IndexOf(@"</tr", indexTr1 + 4);
+                int indexTd1 = 0, indexTd2 = indexTr1 + 3 - 4;
+                string line = "";
+                while (true)
+                {
+                    indexTd1 = tbody.IndexOf("<td", indexTd2 + 4);
+                    if (indexTd1 == -1)
+                        break;
+                    indexTd2 = tbody.IndexOf(@"</td", indexTd1);
+                    int temp = tbody.IndexOf(">", indexTd1) + 1;
+                    var str = tbody.Substring(temp, indexTd2 - temp).Trim();
+                    if (!string.IsNullOrEmpty(str))
+                        line += str + "\t";
+                }
+                line.TrimEnd('\t');
+                if (line != "")
+                    rets.Add(line);
+            }
+            //tbody = Regex.Replace(tbody, @"\s+", " ");
+            return rets.ToArray();
         }
 
         static string GetPath(int tablePageId, int idPageId)
@@ -81,7 +129,13 @@ namespace ParseHtmlTables
 
         static void WriteTable(string[] lines, int tablePageId, int idPageId)
         {
-            File.WriteAllLines(GetPath(tablePageId, idPageId), lines);
+            if (lines != null && lines.Length != 0)
+            {
+                string path = GetPath(tablePageId, idPageId);
+                if (!Directory.Exists(Path.GetDirectoryName(path)))
+                    Directory.CreateDirectory(Path.GetDirectoryName(path));
+                File.WriteAllLines(path, lines);
+            }
         }
 
         async static Task StartWithIdPageAsync(int idPageId)
@@ -99,8 +153,7 @@ namespace ParseHtmlTables
         {
             Uri address = GetTableUri(tablePageId);
             Task<string> tablePageTask = DownloadStringAsTask(address);
-            string[] table = await tablePageTask.ContinueWith(x => ParseTable(x.Result));
-            WriteTable(table, tablePageId, idPageId);
+            await tablePageTask.ContinueWith(x => WriteTable(ParseTable(x.Result), tablePageId, idPageId));
         }
     }
 }
