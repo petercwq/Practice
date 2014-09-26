@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -53,20 +52,6 @@ namespace ParseHtmlTables
             }
         }
 
-        static Task<string> DownloadStringAsTask(Uri address)
-        {
-            TaskCompletionSource<string> tcs = new TaskCompletionSource<string>();
-            WebClient client = new WebClient();
-            client.DownloadStringCompleted += (sender, args) =>
-            {
-                if (args.Error != null) tcs.SetException(args.Error);
-                else if (args.Cancelled) tcs.SetCanceled();
-                else tcs.SetResult(args.Result);
-            };
-            client.DownloadStringAsync(address);
-            return tcs.Task;
-        }
-
         static int[] ParseIds(string html)
         {
             Match match = IdRegex.Match(html);
@@ -92,6 +77,8 @@ namespace ParseHtmlTables
 
         static string[] ParseTable(string html)
         {
+            var text = HttpUtility.StripHTML(html);
+
             List<string> rets = new List<string>();
             var tbody = FindLast(html, "table").Replace("\r", "").Replace("\n", "").Replace("\t", "").Replace("<P>", "").Replace("<p>", "").Replace(@"&nbsp;", "");
             tbody = Regex.Replace(tbody, @"<a\s+(?:[^>]*?\s+)?href=""([^""]*)""", "");
@@ -142,7 +129,7 @@ namespace ParseHtmlTables
         async static Task StartWithIdPageAsync(int idPageId)
         {
             Uri address = GetIdUri(idPageId);
-            Task<string> idPageTask = DownloadStringAsTask(address);
+            Task<string> idPageTask = HttpUtility.DownloadStringAsTask(address);
             int[] ids = await idPageTask.ContinueWith(x => ParseIds(x.Result));
             foreach (var id in ids)
             {
@@ -153,7 +140,7 @@ namespace ParseHtmlTables
         async static Task StartWithTablePageAsync(int tablePageId, int idPageId = -1)
         {
             Uri address = GetTableUri(tablePageId);
-            Task<string> tablePageTask = DownloadStringAsTask(address);
+            Task<string> tablePageTask = HttpUtility.DownloadStringAsTask(address);
             await tablePageTask.ContinueWith(x => WriteTable(ParseTable(x.Result), tablePageId, idPageId));
         }
     }
