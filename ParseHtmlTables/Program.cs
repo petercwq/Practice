@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
@@ -13,7 +14,6 @@ namespace ParseHtmlTables
         const string TableUrlFormat = @"http://aps.unmc.edu/AP/database/query_output.php?ID={0:D5}";
         static readonly Regex IdRegex = new Regex(@"query_output\.php\?ID=\d{5}", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Multiline);
         static readonly int SubLen = "query_output.php?ID=".Length;
-        const int MaxIdPageId = 134;
 
         static Uri GetIdUri(int id)
         {
@@ -25,31 +25,48 @@ namespace ParseHtmlTables
             return new Uri(string.Format(TableUrlFormat, id));
         }
 
+        /// <summary>
+        /// args: 1 0 130 -- for start from id page id range [0, 130]
+        /// args: 2 1234 1280 --for start from table page, id range [1234, 1280]
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
-            //Task[] tasks = new Task[MaxIdPageId];
-            //for (int i = 0; i < MaxIdPageId; i++)
-            //{
-            //    tasks[i] = StartWithIdPageAsync(i);
-            //}
-            //Task.Factory.ContinueWhenAll(tasks,
-            //  ts =>
-            //  {
-            //      Console.WriteLine("Completed: {0}", ts.Count(t => (t.Status == TaskStatus.RanToCompletion)));
-            //  });
-
-            StartWithTablePageAsync(1, 0).Wait();
+            List<Task> tasks = new List<Task>();
+            bool wrong = true;
+            int type = 1, startId = 0, endId = 134;
+            if (args.Length == 0 || (args.Length == 3 && int.TryParse(args[0], out type) && int.TryParse(args[1], out startId) && int.TryParse(args[2], out endId)))
+            {
+                wrong = false;
+            }
+            if (wrong)
+                Console.WriteLine("Args error\nHint:\nno args -- equals 1 0 134\nargs: 1 0 130 -- for start from id page id range [0, 130]\nargs: 2 1234 1280 --for start from table page, id range [1234, 1280]");
+            else
+            {
+                Func<int, Task> startAction = null;
+                if (type == 1)
+                {
+                    startAction = x => StartWithIdPageAsync(x);
+                }
+                else if (type == 2)
+                {
+                    startAction = x => StartWithTablePageAsync(x);
+                }
+                if (startAction != null)
+                {
+                    for (int i = startId; i < endId; i++)
+                    {
+                        tasks.Add(startAction(i));
+                    }
+                    Task.Factory.ContinueWhenAll(tasks.ToArray(),
+                      ts =>
+                      {
+                          Console.WriteLine("Completed: {0}", ts.Count(t => (t.Status == TaskStatus.RanToCompletion)));
+                      });
+                }
+            }
 
             Console.ReadKey();
-        }
-
-        static string DownloadString(Uri address)
-        {
-            using (WebClient client = new WebClient())
-            {
-                string htmlCode = client.DownloadString(address);
-                return htmlCode;
-            }
         }
 
         static int[] ParseIds(string html)
@@ -77,37 +94,19 @@ namespace ParseHtmlTables
 
         static string[] ParseTable(string html)
         {
-            var text = HttpUtility.StripHTML(html);
-
-            List<string> rets = new List<string>();
-            var tbody = FindLast(html, "table").Replace("\r", "").Replace("\n", "").Replace("\t", "").Replace("<P>", "").Replace("<p>", "").Replace(@"&nbsp;", "");
-            tbody = Regex.Replace(tbody, @"<a\s+(?:[^>]*?\s+)?href=""([^""]*)""", "");
-            int indexTr1 = 0, indexTr2 = -4;
-            while (true)
+            var text = HttpUtility.StripHTML(html).Trim();
+            text = Regex.Replace(text, @" +", " ");
+            text = Regex.Replace(text, @"\s{2,}", "\n");
+            string[] tmp = text.Split('\n');
+            List<string> lines = new List<string>();
+            for (int i = 0; i < tmp.Length - 1; i++)
             {
-                indexTr1 = tbody.IndexOf("<tr", indexTr2 + 4);
-                if (indexTr1 == -1)
-                    break;
-                indexTr2 = tbody.IndexOf(@"</tr", indexTr1 + 4);
-                int indexTd1 = 0, indexTd2 = indexTr1 + 3 - 4;
-                string line = "";
-                while (true)
+                if (tmp[i].EndsWith(":"))
                 {
-                    indexTd1 = tbody.IndexOf("<td", indexTd2 + 4);
-                    if (indexTd1 == -1)
-                        break;
-                    indexTd2 = tbody.IndexOf(@"</td", indexTd1);
-                    int temp = tbody.IndexOf(">", indexTd1) + 1;
-                    var str = tbody.Substring(temp, indexTd2 - temp).Trim();
-                    if (!string.IsNullOrEmpty(str))
-                        line += str + "\t";
+                    lines.Add(string.Format("{0}\t{1}", tmp[i], ++i < tmp.Length ? (tmp[i].StartsWith(tmp[i - 1]) ? tmp[i].Substring(tmp[i - 1].Length) : tmp[i]) : "").Trim());
                 }
-                line.TrimEnd('\t');
-                if (line != "")
-                    rets.Add(line);
             }
-            //tbody = Regex.Replace(tbody, @"\s+", " ");
-            return rets.ToArray();
+            return lines.ToArray();
         }
 
         static string GetPath(int tablePageId, int idPageId)
@@ -115,11 +114,10 @@ namespace ParseHtmlTables
             return Path.Combine(idPageId + "", tablePageId + ".txt");
         }
 
-        static void WriteTable(string[] lines, int tablePageId, int idPageId)
+        static void WriteTable(string[] lines, string path)
         {
             if (lines != null && lines.Length != 0)
             {
-                string path = GetPath(tablePageId, idPageId);
                 if (!Directory.Exists(Path.GetDirectoryName(path)))
                     Directory.CreateDirectory(Path.GetDirectoryName(path));
                 File.WriteAllLines(path, lines);
@@ -141,7 +139,7 @@ namespace ParseHtmlTables
         {
             Uri address = GetTableUri(tablePageId);
             Task<string> tablePageTask = HttpUtility.DownloadStringAsTask(address);
-            await tablePageTask.ContinueWith(x => WriteTable(ParseTable(x.Result), tablePageId, idPageId));
+            await tablePageTask.ContinueWith(x => WriteTable(ParseTable(x.Result), GetPath(tablePageId, idPageId)));
         }
     }
 }

@@ -12,12 +12,35 @@ namespace ParseHtmlTables
             WebClient client = new WebClient();
             client.DownloadStringCompleted += (sender, args) =>
             {
-                if (args.Error != null) tcs.SetException(args.Error);
-                else if (args.Cancelled) tcs.SetCanceled();
-                else tcs.SetResult(args.Result);
+                string msg = "Download from " + address.AbsoluteUri + ": ";
+                if (args.Error != null)
+                {
+                    tcs.SetException(args.Error);
+                    msg += "Error";
+                }
+                else if (args.Cancelled)
+                {
+                    tcs.SetCanceled();
+                    msg += "Canceled";
+                }
+                else
+                {
+                    tcs.SetResult(args.Result);
+                    msg += "Completed";
+                }
+                Console.WriteLine(msg);
             };
             client.DownloadStringAsync(address);
             return tcs.Task;
+        }
+
+        public static string DownloadString(Uri address)
+        {
+            using (WebClient client = new WebClient())
+            {
+                string htmlCode = client.DownloadString(address);
+                return htmlCode;
+            }
         }
 
         public static string StripHTML(string source)
