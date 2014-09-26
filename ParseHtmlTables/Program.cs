@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Net;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -26,6 +25,7 @@ namespace ParseHtmlTables
         }
 
         /// <summary>
+        /// no args: equals 1 0 134 -- download all valid pages
         /// args: 1 0 130 -- for start from id page id range [0, 130]
         /// args: 2 1234 1280 --for start from table page, id range [1234, 1280]
         /// </summary>
@@ -37,7 +37,8 @@ namespace ParseHtmlTables
             int type = 1, startId = 0, endId = 134;
             if (args.Length == 0 || (args.Length == 3 && int.TryParse(args[0], out type) && int.TryParse(args[1], out startId) && int.TryParse(args[2], out endId)))
             {
-                wrong = false;
+                if (type > 0 && type < 3)
+                    wrong = false;
             }
             if (wrong)
                 Console.WriteLine("Args error\nHint:\nno args -- equals 1 0 134\nargs: 1 0 130 -- for start from id page id range [0, 130]\nargs: 2 1234 1280 --for start from table page, id range [1234, 1280]");
