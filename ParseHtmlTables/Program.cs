@@ -13,6 +13,7 @@ namespace ParseHtmlTables
         const string TableUrlFormat = @"http://aps.unmc.edu/AP/database/query_output.php?ID={0:D5}";
         static readonly Regex IdRegex = new Regex(@"query_output\.php\?ID=\d{5}", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Multiline);
         static readonly int SubLen = "query_output.php?ID=".Length;
+        const string OutDirectory = "tables";
 
         static Uri GetIdUri(int id)
         {
@@ -24,10 +25,16 @@ namespace ParseHtmlTables
             return new Uri(string.Format(TableUrlFormat, id));
         }
 
+        static string GetPath(int tablePageId, int idPageId)
+        {
+            return Path.Combine(Path.Combine(OutDirectory, idPageId + ""), tablePageId + ".txt");
+        }
+
         /// <summary>
         /// no args: equals 1 0 134 -- download all valid pages
         /// args: 1 0 130 -- for start from id page id range [0, 130]
         /// args: 2 1234 1280 --for start from table page, id range [1234, 1280]
+        /// outputs: ./tables/{pageid}/{tableid}, if start with tableid the pageid will be -1
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
@@ -108,11 +115,6 @@ namespace ParseHtmlTables
                 }
             }
             return lines.ToArray();
-        }
-
-        static string GetPath(int tablePageId, int idPageId)
-        {
-            return Path.Combine(idPageId + "", tablePageId + ".txt");
         }
 
         static void WriteTable(string[] lines, string path)
