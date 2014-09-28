@@ -14,6 +14,7 @@ namespace ParseHtmlTables
         static readonly Regex IdRegex = new Regex(@"query_output\.php\?ID=\d{5}", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Multiline);
         static readonly int SubLen = "query_output.php?ID=".Length;
         const string OutDirectory = "tables";
+        const string SampleDirectory = "sample";
 
         static Uri GetIdUri(int id)
         {
@@ -27,14 +28,20 @@ namespace ParseHtmlTables
 
         static string GetPath(int tablePageId, int idPageId)
         {
-            return Path.Combine(Path.Combine(OutDirectory, idPageId + ""), tablePageId + ".txt");
+            return Path.Combine(/*Path.Combine(OutDirectory, idPageId + "")*/ OutDirectory, tablePageId + ".txt");
+        }
+
+        static string GetSamplePath()
+        {
+            return Path.Combine(SampleDirectory, DateTime.Now.ToString("yyyyMMddHHmmss") + ".txt");
         }
 
         /// <summary>
         /// no args: equals 1 0 134 -- download all valid pages
         /// args: 1 0 130 -- for start from id page id range [0, 130]
         /// args: 2 1234 1280 --for start from table page, id range [1234, 1280]
-        /// outputs: ./tables/{pageid}/{tableid}, if start with tableid the pageid will be -1
+        /// args: 3 "APP ID,Name/Class,Sequence,Length,Structure,Activity,Net charge,Hydrophobic residue%,Boman Index"
+        /// outputs: ./tables/{tableid} for 1,2;  ./sample/{time} for 3
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
@@ -42,14 +49,23 @@ namespace ParseHtmlTables
             List<Task> tasks = new List<Task>();
             bool wrong = true;
             int type = 1, startId = 0, endId = 134;
-            if (args.Length == 0 || (args.Length == 3 && int.TryParse(args[0], out type) && int.TryParse(args[1], out startId) && int.TryParse(args[2], out endId)))
+            string columns = "APD ID,Name/Class,Sequence,Length,Structure,Activity,Net charge,Hydrophobic residue%,Boman Index";
+            if (args.Length == 0
+                || (args.Length == 3 && int.TryParse(args[0], out type) && int.TryParse(args[1], out startId) && int.TryParse(args[2], out endId))
+                || (args.Length == 1 && int.TryParse(args[0], out type))
+                || (args.Length == 2 && int.TryParse(args[0], out type))
+                )
             {
-                if (type > 0 && type < 3)
+                if (type > 0 && type < 4)
                     wrong = false;
+                if (type == 3 && args.Length == 2)
+                    columns = args[1];
             }
             if (wrong)
-                Console.WriteLine("Args error\nHint:\nno args -- equals 1 0 134\nargs: 1 0 130 -- for start from id page id range [0, 130]\nargs: 2 1234 1280 --for start from table page, id range [1234, 1280]");
-            else
+            {
+                Console.WriteLine("Args error\nHint:\nno args -- equals 1 0 134\nargs: 1 0 130 -- for start from id page id range [0, 130]\nargs: 2 1234 1280 --for start from table page, id range [1234, 1280]\n\"APP ID,Name/Class,Sequence,Length,Structure,Activity,Net charge,Hydrophobic residue%,Boman Index\"");
+            }
+            else if (type == 1 || type == 2)
             {
                 Func<int, Task> startAction = null;
                 if (type == 1)
@@ -73,8 +89,44 @@ namespace ParseHtmlTables
                       });
                 }
             }
+            else if (type == 3)
+            {
+                var path = GetSamplePath();
+                if (!Directory.Exists(Path.GetDirectoryName(path)))
+                    Directory.CreateDirectory(Path.GetDirectoryName(path));
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    var col_list = columns.Split(',').ToList();
+                    sw.WriteLine(columns.Replace(',', '\t'));
+
+                    var files = Directory.GetFiles(OutDirectory, "*.txt");
+                    foreach (var file in files)
+                    {
+                        string[] lines = File.ReadAllLines(file);
+                        foreach (var col in col_list)
+                        {
+                            sw.Write(GetValueOf(lines, col));
+                            sw.Write('\t');
+                        }
+                        sw.WriteLine();
+                    }
+                    Console.WriteLine("{0} tables process completed, new file: {1}", files.Length, path);
+                }
+            }
 
             Console.ReadKey();
+        }
+
+        static string GetValueOf(string[] lines, string name)
+        {
+            foreach (var line in lines)
+            {
+                if (line.StartsWith(name, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    return line.Split('\t')[1].Trim();
+                }
+            }
+            return string.Empty;
         }
 
         static int[] ParseIds(string html)
@@ -111,7 +163,7 @@ namespace ParseHtmlTables
             {
                 if (tmp[i].EndsWith(":"))
                 {
-                    lines.Add(string.Format("{0}\t{1}", tmp[i], ++i < tmp.Length ? (tmp[i].StartsWith(tmp[i - 1]) ? tmp[i].Substring(tmp[i - 1].Length) : tmp[i]) : "").Trim());
+                    lines.Add(string.Format("{0}\t{1}", tmp[i].TrimEnd(':'), ++i < tmp.Length ? (tmp[i].StartsWith(tmp[i - 1]) ? tmp[i].Substring(tmp[i - 1].Length) : tmp[i]) : "").Trim());
                 }
             }
             return lines.ToArray();
