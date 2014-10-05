@@ -13,6 +13,9 @@ namespace FastaToInfobox
         const string WikiUrlFormat = @"http://en.wikipedia.org/wiki/{0}";
         const string OutDirectory = "infboxes";
         const string OssFile = "OSs.txt";
+        const string OssErrorFile = "OSsError.txt";
+
+        static List<string> OSsErrors = new List<string>();
 
         static void Main(string[] args)
         {
@@ -31,6 +34,7 @@ namespace FastaToInfobox
             }
             else
             {
+                OSsErrors.Clear();
                 ParseFastaAsync(path).ContinueWith(settask =>
                 {
                     File.WriteAllLines(OssFile, settask.Result);
@@ -42,7 +46,9 @@ namespace FastaToInfobox
                 ts =>
                 {
                     Console.WriteLine("Completed: {0}", ts.Count(t => (t.Status == TaskStatus.RanToCompletion)));
-                });
+                }).Wait();
+
+                File.WriteAllLines(OssErrorFile, OSsErrors);
             }
 
             Console.ReadKey();
@@ -83,7 +89,17 @@ namespace FastaToInfobox
         {
             Uri address = GetWikiUri(title);
             Task<string> tablePageTask = HttpUtility.DownloadStringAsTask(address);
-            await tablePageTask.ContinueWith(x => WriteTable(ParseInfbox(x.Result), GetPath(title)));
+            await tablePageTask.ContinueWith(x =>
+                {
+                    if (x.IsCompleted && x.Status == TaskStatus.RanToCompletion)
+                    {
+                        WriteTable(ParseInfbox(x.Result), GetPath(title));
+                    }
+                    else
+                    {
+                        OSsErrors.Add(title);
+                    }
+                });
         }
 
         static string GetPath(string title)
@@ -93,7 +109,8 @@ namespace FastaToInfobox
 
         static string[] ParseInfbox(string text)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return null;
         }
 
         static Uri GetWikiUri(string title)
