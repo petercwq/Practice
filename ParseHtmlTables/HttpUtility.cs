@@ -48,7 +48,9 @@ namespace ParseHtmlTables
         public async static Task<string> DownloadStringWithHttpClientAsync(Uri address)
         {
             HttpClient client = new HttpClient();
-            return await client.GetStringAsync(address);
+            var task = await client.GetStringAsync(address);
+            client.Dispose();
+            return task;
         }
 
         public static string StripHTML(string source)
