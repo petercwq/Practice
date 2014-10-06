@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using ParseHtmlTables;
 
@@ -11,11 +12,25 @@ namespace FastaToInfobox
     {
         const string TestFasta = @".\TestData\All_DAMPD.fasta";
         const string WikiUrlFormat = @"http://en.wikipedia.org/wiki/{0}";
-        const string OutDirectory = "infboxes";
+        const string OutDirectory = "infoboxes";
+        const string OutTable = "Classification.txt";
+        const string SpliterOfOut = "\t";
         const string OssFile = "OSs.txt";
         const string OssErrorFile = "OSsError.txt";
+        const string DefaultValue = "Unknown";
+
+        static readonly string[] Tokens = new string[] { "Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Subgenus", "Species" };
 
         static List<string> OSsErrors = new List<string>();
+        static List<string> FinalTalbe = new List<string>();
+
+        static Dictionary<string, string> GetUnkonwnDict()
+        {
+            var ret = new Dictionary<string, string>();
+            foreach (var token in Tokens)
+                ret.Add(token, DefaultValue);
+            return ret;
+        }
 
         static void Main(string[] args)
         {
@@ -35,6 +50,8 @@ namespace FastaToInfobox
             else
             {
                 OSsErrors.Clear();
+                FinalTalbe.Clear();
+                FinalTalbe.Add("Name" + SpliterOfOut + string.Join(SpliterOfOut, Tokens));
                 var set = ParseFastaAsync(path).Result;
 
                 File.WriteAllLines(OssFile, set);
@@ -45,6 +62,7 @@ namespace FastaToInfobox
                 ts =>
                 {
                     Console.WriteLine("Completed: {0}", ts.Count(t => (t.Status == TaskStatus.RanToCompletion)));
+                    File.WriteAllLines(OutTable, FinalTalbe);
                     File.WriteAllLines(OssErrorFile, OSsErrors);
                 });
             }
@@ -92,7 +110,7 @@ namespace FastaToInfobox
                     if (x.IsCompleted && x.Status == TaskStatus.RanToCompletion)
                     {
                         Log(address.AbsoluteUri, "Completed");
-                        WriteTable(ParseInfbox(x.Result), GetPath(title));
+                        FinalTalbe.Add(GetRecord(ParseInfbox(x.Result), title));
                     }
                     else
                     {
@@ -101,6 +119,7 @@ namespace FastaToInfobox
                         //if (x.IsFaulted)
                         //    System.Diagnostics.Debug.WriteLine(x.Exception.InnerException);
                         OSsErrors.Add(title);
+                        FinalTalbe.Add(GetRecord(GetUnkonwnDict(), title));
                     }
                 });
         }
@@ -116,10 +135,39 @@ namespace FastaToInfobox
             return Path.Combine(OutDirectory, title + ".txt");
         }
 
-        static string[] ParseInfbox(string text)
+        static Dictionary<string, string> ParseInfbox(string text)
         {
-            //throw new NotImplementedException();
-            return null;
+            int index = text.IndexOf("Binomial");
+            var ret = GetUnkonwnDict();
+            text = HttpUtility.StripHTML(index == -1 ? text : text.Remove(index));
+            var lines = text.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            bool isstarted = false;
+            foreach (var line in lines)
+            {
+                if (IsNeededLine(line))
+                {
+                    isstarted = true;
+                    string[] keyvalue = line.Split(new[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
+                    if (keyvalue.Length > 1)
+                        ret[keyvalue[0].Trim()] = keyvalue[1].Trim();
+                }
+                else
+                {
+                    if (isstarted)
+                        break;
+                }
+            }
+            return ret;
+        }
+
+        static bool IsNeededLine(string line)
+        {
+            foreach (var token in Tokens)
+            {
+                if (line.TrimStart().StartsWith(token + ":"))
+                    return true;
+            }
+            return false;
         }
 
         static Uri GetWikiUri(string title)
@@ -127,14 +175,21 @@ namespace FastaToInfobox
             return new Uri(string.Format(WikiUrlFormat, title));
         }
 
-        static void WriteTable(string[] lines, string path)
+        static string GetRecord(Dictionary<string, string> dict, string title)
         {
-            if (lines != null && lines.Length != 0)
+            string ret = title + SpliterOfOut;
+            if (dict != null && dict.Count > 0)
             {
-                if (!Directory.Exists(Path.GetDirectoryName(path)))
-                    Directory.CreateDirectory(Path.GetDirectoryName(path));
-                File.WriteAllLines(path, lines);
+                List<string> record = new List<string>();
+                foreach (var token in Tokens)
+                {
+                    record.Add(dict[token].Replace(SpliterOfOut, " "));
+                }
+                ret += string.Join(SpliterOfOut, record);
             }
+
+            System.Diagnostics.Debug.WriteLine(ret);
+            return ret;
         }
     }
 }
