@@ -35,20 +35,18 @@ namespace FastaToInfobox
             else
             {
                 OSsErrors.Clear();
-                ParseFastaAsync(path).ContinueWith(settask =>
-                {
-                    File.WriteAllLines(OssFile, settask.Result);
-                    foreach (var title in settask.Result)
-                        tasks.Add(StartWithWikiTitleAsync(title));
-                }).Wait();
+                var set = ParseFastaAsync(path).Result;
+
+                File.WriteAllLines(OssFile, set);
+                foreach (var title in set)
+                    tasks.Add(StartWithWikiTitleAsync(title));
 
                 Task.Factory.ContinueWhenAll(tasks.ToArray(),
                 ts =>
                 {
                     Console.WriteLine("Completed: {0}", ts.Count(t => (t.Status == TaskStatus.RanToCompletion)));
-                }).Wait();
-
-                File.WriteAllLines(OssErrorFile, OSsErrors);
+                    File.WriteAllLines(OssErrorFile, OSsErrors);
+                });
             }
 
             Console.ReadKey();
@@ -88,18 +86,29 @@ namespace FastaToInfobox
         async static Task StartWithWikiTitleAsync(string title)
         {
             Uri address = GetWikiUri(title);
-            Task<string> tablePageTask = HttpUtility.DownloadStringAsTask(address);
+            Task<string> tablePageTask = HttpUtility.DownloadStringWithHttpClientAsync(address);
             await tablePageTask.ContinueWith(x =>
                 {
                     if (x.IsCompleted && x.Status == TaskStatus.RanToCompletion)
                     {
+                        Log(address.AbsoluteUri, "Completed");
                         WriteTable(ParseInfbox(x.Result), GetPath(title));
                     }
                     else
                     {
+                        Log(address.AbsoluteUri, "Error");
+                        System.Diagnostics.Debug.WriteLine(address.AbsoluteUri);
+                        //if (x.IsFaulted)
+                        //    System.Diagnostics.Debug.WriteLine(x.Exception.InnerException);
                         OSsErrors.Add(title);
                     }
                 });
+        }
+
+        static void Log(string url, string result)
+        {
+            string msg = "Download from " + url + ": " + result;
+            Console.WriteLine(msg);
         }
 
         static string GetPath(string title)

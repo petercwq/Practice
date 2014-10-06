@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace ParseHtmlTables
@@ -10,6 +11,7 @@ namespace ParseHtmlTables
         {
             TaskCompletionSource<string> tcs = new TaskCompletionSource<string>();
             WebClient client = new WebClient();
+
             client.DownloadStringCompleted += (sender, args) =>
             {
                 string msg = "Download from " + address.AbsoluteUri + ": ";
@@ -41,6 +43,12 @@ namespace ParseHtmlTables
                 string htmlCode = client.DownloadString(address);
                 return htmlCode;
             }
+        }
+
+        public async static Task<string> DownloadStringWithHttpClientAsync(Uri address)
+        {
+            HttpClient client = new HttpClient();
+            return await client.GetStringAsync(address);
         }
 
         public static string StripHTML(string source)
