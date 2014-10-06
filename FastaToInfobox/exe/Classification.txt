@@ -1,0 +1,271 @@
+Name	Kingdom	Phylum	Class	Order	Family	Genus	Subgenus	Species
+Antheraea pernyi	Animalia	Arthropoda	Insecta	Lepidoptera	Saturniidae	Unknown	Unknown	Unknown
+Enterococcus hirae	Bacteria	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	Enterococcus	Unknown	E. hirae Farrow  Collins, 1985
+Anterhynchium flavomarginatum micado	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Hippoglossus hippoglossus	Animalia	Chordata	Actinopterygii	Pleuronectiformes	Pleuronectidae	Hippoglossus	Unknown	H. hippoglossus
+Bothrops pirajai	Animalia	Chordata	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Paralichthys olivaceus	Animalia	Chordata	Actinopterygii	Pleuronectiformes	Paralichthyidae	Paralichthys	Unknown	P. olivaceus
+Ruminococcus gnavus	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Brassica rapa subsp. chinensis	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Streptomyces malayensis	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Spodoptera littoralis	Animalia	Arthropoda	Insecta	Lepidoptera	Noctuidae	Spodoptera	Unknown	S. littoralis
+Rana luteiventris	Animalia	Chordata	Amphibia	Anura	Ranidae	Rana	Unknown	R. luteiventris
+Bombina maxima	Animalia	Chordata	Amphibia	Anura	Bombinatoridae	Bombina	Unknown	B. maxima
+Phyllomedusa hypochondrialis	Animalia	Chordata	Amphibia	Anura	Hylidae	Phyllomedusa	Unknown	P. hypochondrialis
+Enterococcus mundtii	Bacteria	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	Enterococcus	Unknown	E. mundtii Collins et al. 1986
+Bombus pascuorum	Animalia	Arthropoda	Insecta	Hymenoptera	Apidae	Bombus	Thoracobombus	B. pascuorum
+Buthus eupeus	Animalia	Arthropoda	Arachnida	Scorpiones	Buthidae	Mesobuthus	Unknown	M. eupeus
+Agelaia pallipes pallipes	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Cullen corylifolia	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Dahlia merckii	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Echinochloa crus-galli	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Pyrrhocoris apterus	Animalia	Arthropoda	Insecta	Hemiptera	Unknown	Unknown	Unknown	Unknown
+Leonia cymosa	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Bacillus circulans	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Amycolatopsis sp. (strain MI481-42F4 / FERM P-12739)	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Capsicum annuum	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Litoria rothii	Animalia	Chordata	Amphibia	Anura	Hylidae	Litoria	Unknown	L. rothii
+Eisenia foetida	Animalia	Annelida	Clitellata	Haplotaxida	Lumbricidae	Eisenia	Unknown	E. foetida
+Crotalus durissus terrificus	Animalia	Chordata	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Spatholobus parviflorus	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Pseudopleuronectes americanus	Animalia	Chordata	Actinopterygii	Unknown	Unknown	Unknown	Unknown	Unknown
+Archaeoprepona demophon	Animalia	Arthropoda	Insecta	Lepidoptera	Nymphalidae	Archaeoprepona	Unknown	A. demophon
+Larimichthys crocea	Animalia	Chordata	Actinopterygii	Perciformes	Sciaenidae	Larimichthys	Unknown	L. crocea
+Acrocinus longimanus	Animalia	Arthropoda	Insecta	Coleoptera	Cerambycidae	Unknown	Unknown	Unknown
+Protophormia terraenovae	Animalia	Arthropoda	Insecta	Diptera	Calliphoridae	Protophormia	Unknown	P. terraenovae
+Anopheles gambiae	Animalia	Arthropoda	Insecta	Diptera	Culicidae	Unknown	Unknown	Unknown
+Streptococcus uberis	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Unknown	S. uberis
+Streptomyces carzinostaticus	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Bungarus fasciatus	Animalia	Chordata	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Pogonoperca punctata	Animalia	Chordata	Actinopterygii	Perciformes	Serranidae	Unknown	Unknown	Unknown
+Isometrus maculatus	Animalia	Arthropoda	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Crotalus durissus cascavella	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Dermacentor variabilis	Animalia	Arthropoda	Arachnida	Unknown	Unknown	Unknown	Unknown	Unknown
+Hyalophora cecropia	Animalia	Arthropoda	Insecta	Lepidoptera	Saturniidae	Hyalophora	Unknown	H. cecropia
+Hadrurus aztecus	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Aequipecten irradians	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Heuchera sanguinea	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Nicotiana alata	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Epinephelus coioides	Animalia	Chordata	Actinopterygii	Perciformes	Serranidae	Epinephelus	Unknown	E. coioides
+Lactobacillus sakei	Unknown	Firmicutes	Bacilli	Lactobacillales	Lactobacillaceae	Lactobacillus	Unknown	L. sakei
+Allomyrina dichotoma	Animalia	Arthropoda	Insecta	Coleoptera	Scarabaeidae	Unknown	Unknown	Unknown
+Carnobacterium divergens	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Ascaris suum	Animalia	Nematoda	Secernentea	Ascaridida	Ascarididae	Ascaris	Unknown	A. suum
+Aeshna cyanea	Animalia	Arthropoda	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Litoria xanthomera	Animalia	Chordata	Amphibia	Anura	Hylidae	Litoria	Unknown	L. xanthomera
+Bothrops jararacussu	Animalia	Chordata	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Brassica oleracea var. alboglabra	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Bufo andrewsi	Animalia	Chordata	Amphibia	Anura	Bufonidae	Bufo	Unknown	B. andrewsi
+Xenopus tropicalis	Animalia	Chordata	Amphibia	Anura	Pipidae	Unknown	Unknown	Unknown
+Phyllomedusa azurea	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Rana berlandieri	Animalia	Chordata	Amphibia	Anurra	Ranidae	Lithobates	Unknown	L. berlandieri
+Brassica rapa	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Phyllomedusa sauvagei	Animalia	Chordata	Lissamphibia	Anura	Hylidae	Unknown	Unknown	Unknown
+Litopenaeus vannamei	Animalia	Arthropoda	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Lactococcus lactis subsp. lactis	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Rana hosii	Animalia	Chordata	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Theromyzon tessulatum	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Rana grahami	Animalia	Chordata	Amphibia	Anura	Ranidae	Odorrana	Unknown	O. grahami
+Glandirana rugosa	Animalia	Chordata	Amphibia	Anura	Ranidae	Glandirana	Unknown	G. rugosa
+Mesocricetus auratus	Animalia	Chordata	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Grammistes sexlineatus	Animalia	Chordata	Actinopterygii	Perciformes	Serranidae	Unknown	Unknown	Unknown
+Pelophylax nigromaculatus	Animalia	Chordata	Amphibia	Anura	Ranidae	Pelophylax	Unknown	P. nigromaculatus
+Lactobacillus johnsonii	Unknown	Unknown	Bacilli	Unknown	Lactobacillaceae	Lactobacillus	Unknown	L. johnsonii
+Staphylococcus warneri	Bacteria	Firmicutes	Bacilli	Bacillales	Staphylococcaceae	Staphylococcus	Unknown	S. warneri
+Chassalia parviflora	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Acalolepta luxuriosa	Animalia	Arthropoda	Unknown	Insecta	Cerambycidae	Unknown	Unknown	Unknown
+Morone chrysops	Animalia	Chordata	Actinopterygii	Perciformes	Moronidae	Morone	Unknown	M. chrysops
+Oryctes rhinoceros	Animalia	Arthropoda	Insecta	Coleoptera	Scarabaeidae	Unknown	Unknown	Unknown
+Crotalus durissus ruruima	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Bacillus badius	Bacteria	Firmicutes	Bacilli	Bacillales	Bacillaceae	Bacillus	Unknown	B. badius
+Streptococcus phage Cp-1	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Rana sphenocephala	Animalia	Chordata	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Glossina morsitans morsitans	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Bombyx mori	Animalia	Arthropoda	Insecta	Lepidoptera	Bombycidae	Bombyx	Unknown	B. mori
+Rana pipiens	Animalia	Chordata	Amphibia	Anura	Ranidae	Lithobates	Unknown	L. pipiens
+Oxyopes takobius	Animalia	Arthropoda	Arachnida	Araneae	Unknown	Unknown	Unknown	Unknown
+Carnobacterium maltaromaticum	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Streptoverticillium griseoverticillatum	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Castanopsis chinensis	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Lachesana tarabaevi	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Lactococcus sp.	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Crassostrea virginica	Animalia	Mollusca	Bivalvia	Ostreoida	Ostreidae	Crassostrea	Unknown	C. virginica
+Lactococcus phage mv1	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Myrmecia banksi	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Spinacia oleracea	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Apis mellifera	Animalia	Arthropoda	Insecta	Hymenoptera	Apidae	Apis	Unknown	A. mellifera
+Bacillus cereus	Bacteria	Firmicutes	Bacilli	Bacillales	Bacillaceae	Bacillus	Unknown	B. cereus
+Spodoptera litura	Animalia	Arthropoda	Insecta	Lepidoptera	Noctuidae	Spodoptera	Unknown	S. litura
+Actinidia chinensis	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Streptomyces sp.	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Oiketicus kirbyi	Animalia	Arthropoda	Insecta	Lepidoptera	Psychidae	Oiketicus	Unknown	O. kirbyi
+Opistophthalmus carinatus	Animalia	Arthropoda	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Pagrus major	Animalia	Chordata	Actinopterygii	Perciformes	Unknown	Unknown	Unknown	Unknown
+Viola hederacea	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Aedes aegypti	Animalia	Arthropoda	Insecta	Diptera	Culicidae	Aedes	Stegomyia	A. aegypti
+Oldenlandia affinis	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Pachycondyla goeldii	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Vespa magnifica	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Heliothis virescens	Animalia	Arthropoda	Insecta	Lepidoptera	Noctuidae	Heliothis	Unknown	H. virescens
+Lens culinaris subsp. culinaris	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Opisthacanthus madagascariensis	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Enterococcus sp.	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Litoria fallax	Animalia	Chordata	[[]]	Anura	Hylidae	Litoria	Unknown	L. fallax
+Venerupis philippinarum	Animalia	Mollusca	Bivalvia	Veneroida	Veneridae	Venerupis	Unknown	V. philippinarum
+Rana pleuraden	Animalia	Chordata	Amphibia	Anura	Ranidae	Babina	Unknown	B. pleuraden
+Macrovipera lebetina	Animalia	Chordata	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Vicia faba	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Morone saxatilis	Animalia	Chordata	Actinopterygii	Perciformes	Moronidae	Morone	Unknown	M. saxatilis
+Gastrophysa atrocyanea	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Mesobuthus martensii	Animalia	Arthropoda	Arachnida	Scorpiones	Buthidae	Mesobuthus	Unknown	M. martensii
+Phyllomedusa tarsius	Animalia	Chordata	Amphibia	Anura	Hylidae	Phyllomedusa	Unknown	P. tarsius
+Rana clamitans	Animalia	Chordata	Amphibia	Anura	Ranidae	Lithobates	Unknown	L. clamitans
+Brassica napus	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Leuconostoc gelidum	Bacteria	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Curcuma longa	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Hydra vulgaris	Animalia	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Entamoeba histolytica	Unknown	Amoebozoa	Archamoebae	Amoebida	Unknown	Entamoeba	Unknown	E. histolytica
+Macadamia integrifolia	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Rana temporaria	Animalia	Chordata	Amphibia	Anura	Ranidae	Rana	Unknown	R. temporaria
+Sarcophaga peregrina	Animalia	Arthropoda	Insecta	Diptera	Unknown	Unknown	Unknown	Unknown
+Heterometrus laoticus	Animalia	Arthropoda	Chelicerata	Scorpiones	Scorpionidae	Heterometrus	Unknown	H. laoticus
+Meleagris gallopavo	Animalia	Chordata	Aves	Galliformes	Phasianidae	Unknown	Unknown	Unknown
+Senna didymobotrya	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Clitoria ternatea	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Malva parviflora	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Haemaphysalis longicornis	Animalia	Arthropoda	Arachnida	Unknown	Unknown	Unknown	Unknown	Unknown
+Nigella sativa	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Bacillus subtilis	Unknown	Firmicutes	Bacilli	Bacillales	Bacillaceae	Bacillus	Unknown	B. subtilis
+Tachypleus tridentatus	Animalia	Arthropoda	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Orancistrocerus drewseni	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Rana guentheri	Animalia	Chordata	Amphibia	Anura	Ranidae	Hylarana	Unknown	H. guentheri
+Paenibacillus polymyxa	Bacteria	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Rana palustris	Animalia	Chordata	Amphibia	Anura	Ranidae	Lithobates	Unknown	L. palustris
+Planobispora rosea	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Vigna unguiculata	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Dictyostelium discoideum	Amoebozoa	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Phyllomedusa oreades	Animalia	Chordata	Amphibia	Anura	Hylidae	Phyllomedusa	Unknown	P. oreades
+Rana picturata	Animalia	Chordata	Amphibia	Anura	Ranidae	Hylarana	Unknown	H. picturata
+Opisthacanthus cayaporum	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Leiurus quinquestriatus hebraeus	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Petunia hybrida	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Enterococcus faecium	Bacteria	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	Enterococcus	Unknown	E. faecium
+Clavibacter michiganensis subsp. michiganensis	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Phlebotomus duboscqi	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Asterias rubens	Animalia	Echinodermata	Asteroidea	Forcipulatida	Asteriidae	Asterias	Unknown	Asterias rubens
+Holotrichia diomphalia	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Phyllomedusa distincta	Animalia	Chordata	Amphibia	Anura	Hylidae	Phyllomedusa	Unknown	P. distincta
+Coturnix coturnix japonica	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Helianthus annuus	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Zophobas atratus	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Limulus polyphemus	Animalia	Arthropoda	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Bufo bufo gargarizans	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Litoria splendida	Animalia	Chordata	Amphibia	Anura	Hylidae	Litoria	Unknown	L. splendida
+Grammostola rosea	Animalia	Arthropoda	Arachnida	Araneae	Unknown	Unknown	Unknown	Unknown
+Streptomyces violaceus	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Mirabilis jalapa	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Eumenes rubronotatus	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Danio rerio	Animalia	Chordata	Actinopterygii	Cypriniformes	Cyprinidae	Danio	Unknown	D. rerio
+Tenebrio molitor	Animalia	Arthropoda	Insecta	Coleoptera	Tenebrionidae	Tenebrio	Unknown	T. molitor
+Phaseolus vulgaris	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Manduca sexta	Animalia	Arthropoda	Insecta	Lepidoptera	Sphingidae	Manduca	Unknown	M. sexta
+Vigna radiata var. radiata	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Hypsiboas raniceps	Animalia	Chordata	Amphibia	Anura	Hylidae	Hypsiboas	Unknown	H. raniceps
+Lucilia sericata	Animalia	Arthropoda	Insecta	Diptera	Calliphoridae	Lucilia	Unknown	L. sericata
+Rattus norvegicus	Animalia	Chordata	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Pediococcus acidilactici	Bacteria	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Litoria gracilenta	Animalia	Chordata	Amphibia	Anura	Hylidae	Litoria	Unknown	L. gracilenta
+Rana brevipoda porsa	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Polybia paulista	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Psychotria longipes	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Bothrops atrox	Animalia	Chordata	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Aesculus hippocastanum	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Parabuthus schlechteri	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Drosophila melanogaster	Animalia	Arthropoda	Insecta	Diptera	Drosophilidae	Drosophila	Sophophora	Unknown
+Caenorhabditis elegans	Animalia	Nematoda	Chromadorea	Rhabditida	Rhabditidae	Caenorhabditis	Unknown	C. elegans
+Gallus gallus	Animalia	Chordata	Aves	Galliformes	Phasianidae	Unknown	Unknown	Unknown
+Homo sapiens	Animalia	Chordata	Mammalia	Primates	Hominidae	Unknown	Unknown	Unknown
+Rana arvalis	Animalia	Chordata	Amphibia	Anura	Ranidae	Rana	Unknown	R. arvalis
+Bombina orientalis	Animalia	Chordata	Amphibia	Anura	Bombinatoridae	Bombina	Unknown	B. orientalis
+Daboia russelli siamensis	Animalia	Chordata	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Cupiennius salei	Animalia	Arthropoda	Arachnida	Araneae	Unknown	Unknown	Unknown	Unknown
+Anomala cuprea	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Palomena prasina	Animalia	Arthropoda	Insecta	Hemiptera	Unknown	Unknown	Unknown	Unknown
+Brevibacterium linens	Bacteria	Actinobacteria	Unknown	Actinomycetales	Unknown	Unknown	Unknown	Unknown
+Chinchilla lanigera	Animalia	Chordata	Mammalia	Rodentia	Chinchillidae	Chinchilla	Unknown	C. lanigera
+Phyllomedusa bicolor	Animalia	Chordata	Amphibia	Anura	Hylidae	Unknown	Unknown	Unknown
+Vespa crabro	Animalia	Arthropoda	Insecta	Hymenoptera	Vespidae	Vespa	Unknown	V. crabro
+Lactobacillus curvatus	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Tachypleus gigas	Animalia	Arthropoda	Merostomata	Xiphosura	Limulidae	Tachypleus	Unknown	T. gigas
+Pelodiscus sinensis	Animalia	Chordata	Sauropsida	Testudines	Trionychidae	Pelodiscus	Unknown	P. sinensis
+Lactobacillus amylovorus	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Oryctolagus cuniculus	Animalia	Chordata	Mammalia	Lagomorpha	Leporidae	Oryctolagus Lilljeborg, 1873	Unknown	O. cuniculus
+Rana boylii	Animalia	Chordata	Amphibia	Anura	Ranidae	Rana	Unknown	R. boylii
+Litoria peronii	Animalia	Chordata	Amphibia	Anura	Hylidae	Litoria	Unknown	L. peronii
+Phytolacca americana	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Papio hamadryas	Animalia	Chordata	Mammalia	Primates	Cercopithecidae	Papio	Unknown	P. hamadryas
+Rana japonica	Animalia	Chordata	Amphibia	Anura	Ranidae	Rana	Unknown	R. japonica
+Lychas mucronatus	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Raphanus sativus	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Carcinoscorpius rotundicauda	Animalia	Arthropoda	Merostomata	Xiphosura	Limulidae	Carcinoscorpius Pocock, 1902	Unknown	C. rotundicauda
+Bothropoides pauloensis	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Streptococcus pyogenes	Eubacteria	Firmicutes	Cocci	Lactobacillales	Streptococcaceae	Streptococcus	Unknown	S. pyogenes
+Rhacophorus schlegelii	Animalia	Chordata	Amphibia	Anura	Rhacophoridae	Rhacophorus	Unknown	R. dorsoviridis
+Ictalurus punctatus	Animalia	Chordata	Actinopterygii	Siluriformes	Ictaluridae	Ictalurus	Unknown	I. punctatus
+Arabidopsis thaliana	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Streptococcus mutans	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Unknown	S. mutans
+Staphylococcus haemolyticus	Bacteria	Firmicutes	Bacilli	Bacillales	Staphylococcaceae	Staphylococcus	Unknown	S. haemolyticus
+Rana dybowskii	Animalia	Chordata	Amphibia	Anura	Ranidae	Rana	Unknown	R. dybowskii
+Cavia porcellus	Animalia	Chordata	Mammalia	Rodentia	Unknown	Unknown	Unknown	Unknown
+Sinapis alba	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Rana sevosa	Animalia	Chordata	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Pseudoplectania nigrella	Fungi	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Polistes dominula	Animalia	Arthropoda	Insecta	Hymenoptera	Vespidae	Polistes	Unknown	P. dominula
+Vigna unguiculata subsp. sesquipedalis	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Phaseolus coccineus	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Kassina senegalensis	Animalia	Chordata	Amphibia	Anura	Hyperoliidae	Kassina	Unknown	K. senegalensis
+Staphylococcus epidermidis	Bacteria	Firmicutes	Bacilli	Bacillales	Staphylococcaceae	Staphylococcus	Unknown	S. epidermidis
+Ovis aries	Animalia	Chordata	Mammalia	Artiodactyla	Bovidae	Unknown	Unknown	Unknown
+Myrmecia pilosula	Animalia	Arthropoda	Insecta	Hymenoptera	Formicidae	Unknown	Unknown	Unknown
+Mytilus edulis	Animalia	Mollusca	Bivalvia	Unknown	Unknown	Unknown	Unknown	Unknown
+Pisum sativum	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Amyda cartilaginea	Animalia	Chordata	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Taraxacum officinale	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Pandinus imperator	Animalia	Arthropoda	Arachnida	Scorpiones	Scorpionidae	Pandinus	Unknown	P. imperator
+Beta vulgaris	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Galleria mellonella	Animalia	Arthropoda	Insecta	Lepidoptera	Pyralidae	Unknown	Unknown	Unknown
+Emys orbicularis	Animalia	Chordata	Reptilia	Testudines	Emydidae	Unknown	Unknown	Unknown
+Aptenodytes patagonicus	Animalia	Chordata	Aves	Sphenisciformes	Spheniscidae	Aptenodytes	Unknown	A. patagonicus
+Avena sativa	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Rana catesbeiana	Animalia	Chordata	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Helicobacter pylori	Bacteria	Proteobacteria	Epsilonproteobacteria	Campylobacterales	Helicobacteraceae	Helicobacter	Unknown	Unknown
+Oxyuranus microlepidotus	Animalia	Chordata	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Musca domestica	Animalia	Arthropoda	Insecta	Diptera	Unknown	Unknown	Unknown	Unknown
+Solanum lycopersicum	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Xenopus laevis	Animalia	Chordata	Amphibia	Anura	Pipidae	Xenopus	Unknown	X. laevis
+Rana esculenta	Animalia	Chordata	Amphibia	Anura	Ranidae	Pelophylax	Unknown	P. lessonae × P. ridibundus
+Mus musculus	Animalia	Chordata	Mammalia	Rodentia	Muridae	Unknown	Unknown	Unknown
+Salmo salar	Animalia	Chordata	Actinopterygii	Salmoniformes	Salmonidae	Salmo	Unknown	S. salar
+Hordeum vulgare	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Rana sylvatica	Animalia	Chordata	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Pseudechis australis	Animalia	Chordata	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Macaca mulatta	Animalia	Chordata	Mammalia	Primates	Cercopithecidae	Macaca	Unknown	M. mulatta
+Pinus sylvestris	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Bos taurus	Animalia	Chordata	Mammalia	Unknown	Unknown	Unknown	Unknown	Unknown
+Protobothrops mucrosquamatus	Animalia	Chordata	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Passiflora edulis	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Allium cepa	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Escherichia coli	Eubacteria	Proteobacteria	Gammaproteobacteria	Enterobacteriales	Enterobacteriaceae	Escherichia	Unknown	coli
+Struthio camelus	Animalia	Chordata	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Sus scrofa	Animalia	Chordata	Mammalia	Artiodactyla	Suidae	Sus	Unknown	S. scrofa
+Oncorhynchus mykiss	Animalia	Chordata	Actinopterygii	Salmoniformes	Salmonidae	Oncorhynchus	Unknown	O. mykiss
+Caretta caretta	Animalia	Chordata	Reptilia	Unknown	Unknown	Unknown	Unknown	Unknown
+Solanum tuberosum	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Bombina variegata	Animalia	Chordata	Amphibia	Anura	Unknown	Unknown	Unknown	Unknown
+Capra hircus	Animalia	Chordata	Mammalia	Artiodactyla	Bovidae	Unknown	Unknown	Unknown
+Zea mays	Plantae	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Morone chrysops x Morone saxatilis	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Macaca fascicularis	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Mytilus galloprovincialis	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Leuconostoc mesenteroides	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown	Unknown
+Equus caballus	Animalia	Chordata	Mammalia	Perissodactyla	Equidae	Equus	Unknown	E. ferus
